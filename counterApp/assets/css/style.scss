@@ -1,0 +1,76 @@
+/*APP*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@mixin tablet{
+    @media screen and (min-width: 630px){
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (min-width: 960px){
+        @content;
+    }
+}
+.capp-wrapper{
+    width: 100%;
+    margin: 3rem;
+    .capp-content{
+        width: auto;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 2rem 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        &__capp-box{
+            width: 100%;
+            max-width: 200px;
+            height: 200px;
+            display: inline-block;
+            background-color: #e3e3e3;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: flex-start;
+            border-bottom: 8px solid #00858E;
+            text-align: center;
+            padding: 1rem;
+            img{
+                width: 60px;
+                margin: .8rem;
+            }
+            span{
+                font-family: "Raleway", sans-serif;
+                font-size: 2.2rem;
+                font-weight: 600;
+                color: #00858E;
+            }
+            span.num{
+                font-family: "Raleway", sans-serif;
+                font-size: 2.5rem;
+                font-weight: 600;
+                color: #00858E;
+            }
+            span.text{
+                margin-top: 1rem;
+                font-family: "Raleway", sans-serif;
+                font-size: .8rem;
+                font-weight: 600;
+                color: #00858E;
+            }
+            &.capp-extra{
+                display: none;
+                @include tablet(){
+                    display: block;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
